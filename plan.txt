@@ -1,0 +1,12 @@
+Per the instructions on https://www.theodinproject.com/lessons/foundations-rock-paper-scissors#assignment
+
+Randomly decide the "computer's" hand (rock,paper,scissors) using the random number generator for 3 different integers.
+Set a string based on the integer value.
+
+Take an answer from the player in text. Use the all caps or all lowercase function to ensure that it is case-insensitive
+
+Create a function to compare the player and computer values to determine the winner. 
+Compare with if statements or similar and consider ties.
+
+Create a loop to run through a best of 5 rounds. Track Computer and Player wins and stop once either reaches 3 points.
+Ties should extend the rounds by not adding any score as neither has won.
