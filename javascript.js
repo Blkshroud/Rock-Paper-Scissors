@@ -50,5 +50,34 @@ function playRound(){
     }
 }
 
+function game(){
+    let pWins = 0;
+    let cWins = 0;
+    let matchCount = 0;
+    while(pWins < 3 && cWins < 3){
+        let result = playRound();
+        let winner = result.substring(0,5)
+        if(winner === `You w`){
+            pWins++;
+            console.log(result);
+            matchCount++;
+        }
+        else if(winner === `You l`){
+            cWins++;
+            console.log(result);
+            matchCount++;
+        }
+        else{
+            console.log(result);
+            matchCount++;
+        }
+    }
+    if(pWins > cWins){
+        console.log(`You are the overall victor! You won 3 times and the cpu won ${cWins} times. It took a total of ${matchCount} rounds for a winner to be decided.`);
+    }
+    else{
+        console.log(`The CPU is the overall victor. You won ${pWins} times before the cpu won ${cWins} times. It took a total of ${matchCount} rounds for a winner to be decided.`);
+    }
+}
 
-console.log(playRound());
+game();
