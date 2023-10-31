@@ -10,3 +10,8 @@ Compare with if statements or similar and consider ties.
 
 Create a loop to run through a best of 5 rounds. Track Computer and Player wins and stop once either reaches 3 points.
 Ties should extend the rounds by not adding any score as neither has won.
+
+
+
+Ver 2. (GUI Addition) https://www.theodinproject.com/lessons/foundations-revisiting-rock-paper-scissors
+
