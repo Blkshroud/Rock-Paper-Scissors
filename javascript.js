@@ -16,17 +16,20 @@ rockBtn.addEventListener('click', rock);
 paperBtn.addEventListener('click', paper);
 scissorBtn.addEventListener('click', scissors);
 
-const container = document.querySelector("div");
+const scoreBoard = document.querySelector("#scoreBoard");
+const round = document.querySelector("#round");
+const bottom = document.querySelector("#victor");
+
 
 const pWinsText = document.createElement("p");
 const cWinsText = document.createElement("p");
 const currentWinnerText = document.createElement("p");
 const overallWinnerText = document.createElement("p");
 
-container.appendChild(pWinsText);
-container.appendChild(cWinsText);
-container.appendChild(currentWinnerText);
-container.appendChild(overallWinnerText);
+scoreBoard.appendChild(pWinsText);
+scoreBoard.appendChild(cWinsText);
+round.appendChild(currentWinnerText);
+bottom.appendChild(overallWinnerText);
 let pWins = 0;
 let cWins = 0;
 let matchCount = 0;
@@ -64,8 +67,8 @@ function playRound(pChoice){
         pWinsText.textContent = `You have won ${pWins} time(s).`;
         if(pWins === 5){
             overallWinnerText.textContent = `You are the overall victor! You won ${pWins} times and the cpu won ${cWins} times. It took a total of ${matchCount} rounds for a winner to be decided.`
-            container.appendChild(overallWinnerText);
-            container.appendChild(restartBtn);
+            bottom.appendChild(overallWinnerText);
+            bottom.appendChild(restartBtn);
             restartBtn.addEventListener('click', resetGame);
             rockBtn.removeEventListener('click', rock);
             paperBtn.removeEventListener('click', paper);
@@ -81,8 +84,8 @@ function playRound(pChoice){
         cWinsText.textContent = `The computer has won ${cWins} time(s).`;
         if(cWins === 5){
             overallWinnerText.textContent = `The CPU is the overall victor. You won ${pWins} times before the cpu won ${cWins} times. It took a total of ${matchCount} rounds for a winner to be decided.`;
-            container.appendChild(overallWinnerText);
-            container.appendChild(restartBtn);
+            bottom.appendChild(overallWinnerText);
+            bottom.appendChild(restartBtn);
             restartBtn.addEventListener('click', resetGame);
             rockBtn.removeEventListener('click', rock);
             paperBtn.removeEventListener('click', paper);
@@ -104,8 +107,8 @@ function resetGame(){
     cWins = 0;
     matchCount = 0;
     restartBtn.removeEventListener('click', resetGame);
-    container.removeChild(restartBtn);
-    container.removeChild(overallWinnerText);
+    bottom.removeChild(restartBtn);
+    bottom.removeChild(overallWinnerText);
     pWinsText.textContent = `You have won ${pWins} time(s).`;
     cWinsText.textContent = `The computer has won ${cWins} time(s).`;
     currentWinnerText.textContent = `Click a button to start playing!`;

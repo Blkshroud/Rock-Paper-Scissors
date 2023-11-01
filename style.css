@@ -1,0 +1,19 @@
+img{
+    cursor: pointer;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    background-color: skyblue;
+}
+
+div{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+h1{
+    text-align: center;
+}
